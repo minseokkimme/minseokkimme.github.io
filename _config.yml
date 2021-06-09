@@ -30,9 +30,11 @@ masthead_title           : "꾸준히 기록하는 개발자"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
-  provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
+  provider    : "disqus"                                # comment 처리 사이트 명칭 기재
+  # false (default), "disqus", "discourse", "facebook"
+  # "staticman", "staticman_v2", "utterances", "custom"
   disqus:
-    shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+    shortname : "minseokkimme-github-io-4"                    # disqus의 shortname 기재
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
@@ -253,7 +255,7 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: # true
+      comments: true
       share: true
       related: true
 
@@ -264,3 +266,4 @@ defaults:
     values:
       layout: single
       author_profile: true
+
