@@ -1,0 +1,77 @@
+I"w<p>클라이언트가 보낸 요청의 처리 상태를 응답에서 알려주는 기능</p>
+<ul>
+  <li>1xx (Informational): 요청이 수신되어 처리중</li>
+  <li>2xx (Sucessful): 요청 정상 처리</li>
+  <li>3xx (Redirection): 요청을 완료하려면 추가 행동이 필요</li>
+  <li>4xx (Client Error): 클라이언트 오류</li>
+  <li>5xx (Server Error): 서버 오류</li>
+</ul>
+
+<blockquote>
+  <p>만약 299와 같이 모르는 상태 코드가 나온다면??<br />
+➡️299는 200번대에 있으니까 2xx의 의미로 생각하자!!</p>
+</blockquote>
+
+<h2 id="2xx-successful">2xx (Successful)</h2>
+
+<h3 id="1️⃣-200-ok">1️⃣ 200 OK</h3>
+
+<p><img src="https://user-images.githubusercontent.com/43941495/121916568-39d11600-cd6f-11eb-9e99-1edb2179bc74.png" alt="img" /></p>
+<ul>
+  <li>가장 많이 볼 수 있는 케이스</li>
+</ul>
+
+<h3 id="2️⃣-201-created">2️⃣ 201 Created</h3>
+<p><img src="https://user-images.githubusercontent.com/43941495/121919777-51f66480-cd72-11eb-93a4-12990e453707.png" alt="img_1" /></p>
+<ul>
+  <li>클라이언트에서 저장하고 싶은 리소스 전달</li>
+  <li>서버는 이를 받아서 저장하고 성공하면 201 반환</li>
+  <li>클라이언트는 Location필드를 통해서 저장된 위치를 확인</li>
+</ul>
+
+<h3 id="3️⃣-202-accepted">3️⃣ 202 Accepted</h3>
+<ul>
+  <li>요청이 접수되었으나 처리가 완료되지 않은 상태</li>
+</ul>
+
+<h3 id="4️⃣-204-no-content">4️⃣ 204 No Content</h3>
+<ul>
+  <li>서버가 요청을 성공적으로 수행했지만, 응답 페이로드 본문에 보낼 데이터가 없는 경우</li>
+</ul>
+
+<blockquote>
+  <p>Ex) 웹에 있는 save 버튼을 눌렀을 때 같은 화면을 유지하지만 204 메시지를 통해서 성공한 것을 인식할 수 있다.</p>
+</blockquote>
+
+<h2 id="3xx-redirection">3xx (Redirection)</h2>
+
+<h3 id="1️⃣-redirection-이란">1️⃣ Redirection 이란?</h3>
+<p>웹 브라우저는 3xx 응답의 결과에 Location 헤더가 있으면, Location 위치로 자동 이동하는 것을 말합니다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/43941495/121921567-13fa4000-cd74-11eb-8e6f-793b66c62021.png" alt="img_2" /></p>
+<ul>
+  <li>클라이언트가 /event 페이지를 요청</li>
+  <li>서버는 301 응답 코드를 내고 Location 필드에 새로운 페이지를 반환</li>
+  <li>클라이언트는 반환된 페이지에 자동으로 redirect</li>
+</ul>
+
+<h3 id="2️⃣-redirection-이해">2️⃣ Redirection 이해</h3>
+<ul>
+  <li>영구 Redirection
+    <ul>
+      <li>특정 리소스의 URI가 영구적으로 이동하는 경우</li>
+    </ul>
+  </li>
+  <li>일시 Redirection
+    <ul>
+      <li>일시적으로 변경하는 경우</li>
+      <li>주문 완료 후 주문 내역 화면으로 이동</li>
+    </ul>
+  </li>
+  <li>특수 Redirection
+    <ul>
+      <li>결과 대신 캐시를 사용</li>
+    </ul>
+  </li>
+</ul>
+:ET
