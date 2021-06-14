@@ -1,8 +1,8 @@
 # main links
 main:
-  - title: "Introduce"
-    url: /about/
+#  - title: "Introduce"
+#    url: /about/
   - title: "Category"
     url: "/categories/"
-  - title: "Tags"
+  - title: "Tag"
     url: /tags/
